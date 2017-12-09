@@ -25,7 +25,8 @@ public class Test {
 	}
 
 	public static void initFrance(int distance){
-		geomap = new GeoMap("fr.txt");
+		String dir = System.getProperty("user.dir");
+		geomap = new GeoMap(dir + "/src/fr.txt");
 		v1 = geomap.premierePlace("Palaiseau");
 		g = new EuclideanGraph(distance);
 		for (Place v : geomap.places()) {
@@ -71,7 +72,8 @@ public class Test {
 	
     // Q1: UnionFind
     public static void test1( ){
-    	geomap = new GeoMap("fr.txt");
+    	String dir = System.getProperty("user.dir");
+    	geomap = new GeoMap(dir + "/src/fr.txt");
         UnionFind u = new UnionFind( );
         Place v0 = geomap.premierePlace( "Palaiseau" );
         Place v1 = geomap.premierePlace( "Paris" );
@@ -192,12 +194,12 @@ public class Test {
     }
     
     public static void main(String[] args) {
-        test0();
-        //test1();
-        //test2();
-        //test3();
-        //test4();
-        //test5();
+//        test0();
+//        test1();
+//        test2();
+//        test3();
+//        test4();
+        test5();
     }
 }
 
